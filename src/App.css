@@ -1,9 +1,16 @@
-.title {
+body {
+  font-family: sans-serif;
+  color: #324568;
+  background: white;
+}
+
+.title,
+h2,
+a {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
 
 .container {
   display: flex;
@@ -20,4 +27,51 @@ label {
 
 .address {
   margin-top: 10px;
+}
+
+a {
+  color: darkslategrey;
+}
+
+form {
+  border: solid 2px #6a86b94d;
+  border-radius: 5px;
+  background: #324568bf;
+  color: white;
+  padding: 15px;
+  width: 30%;
+  margin: auto;
+}
+
+input,
+select {
+  padding: 5px;
+  border: 1px solid whitesmoke;
+  border-radius: 2px;
+  height: 15px;
+}
+
+select {
+  height: 27px;
+}
+
+input[type="date"] {
+  width: 163px;
+}
+
+button {
+  height: 28px;
+  width: 125px;
+  color: #324568bf;
+  font-weight: bold;
+  border: 1px solid ghostwhite;
+  border-radius: 2px;
+}
+
+button:hover{
+  transform: scale(1.05);
+  background-color: rgba(78, 201, 78, 0.884);
+  color: white;
+  border: 1px solid rgb(78, 201, 78);
+  cursor:pointer;
 }
