@@ -1,8 +1,10 @@
+import { Link } from "react-router-dom";
+
 function CreateEmployee() {
   return (
     <div>
       <h1>Current Employees</h1>
-      <h2>Create Employee</h2>
+      <Link to="/">Home</Link>
     </div>
   );
 }
