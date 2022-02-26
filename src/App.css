@@ -1,10 +1,9 @@
 body {
   font-family: sans-serif;
   color: #324568;
-  background: white;
 }
 
-.title,
+h1,
 h2,
 a {
   display: flex;
@@ -12,11 +11,8 @@ a {
   justify-content: center;
 }
 
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+h2 {
+  text-decoration: underline;
 }
 
 label {
@@ -25,12 +21,24 @@ label {
   margin-bottom: 10px;
 }
 
-.address {
-  margin-top: 10px;
+fieldset {
+  margin: 25px 0 10px;
 }
 
 a {
-  color: darkslategrey;
+  color: #616575;
+  text-decoration: none;
+  border: 1px solid darkgrey;
+  border-radius: 5px;
+  padding: 5px;
+  width: 20%;
+  cursor: pointer;
+  margin: auto;
+}
+
+a:hover {
+  transform: scale(1.05);
+  cursor: pointer;
 }
 
 form {
@@ -41,6 +49,7 @@ form {
   padding: 15px;
   width: 30%;
   margin: auto;
+  margin-bottom: 5%;
 }
 
 input,
@@ -53,25 +62,50 @@ select {
 
 select {
   height: 27px;
+  width: 180px;
 }
 
 input[type="date"] {
-  width: 163px;
+  width: 170px;
 }
 
 button {
   height: 28px;
-  width: 125px;
+  width: 174px;
   color: #324568bf;
   font-weight: bold;
-  border: 1px solid ghostwhite;
+  border: 5px solid #cccccc26;
   border-radius: 2px;
 }
 
-button:hover{
+button:hover {
   transform: scale(1.05);
-  background-color: rgba(78, 201, 78, 0.884);
+  border: 4px solid #cccccc;
+  cursor: pointer;
+}
+
+table {
+  margin: auto;
+  margin-bottom: 20px;
+  border-spacing: 0;
+}
+
+thead {
+  background: #324568bf;
   color: white;
-  border: 1px solid rgb(78, 201, 78);
-  cursor:pointer;
+}
+
+thead > tr > th {
+  border: 1px solid white;
+  border-bottom: 1px solid #65748e;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+th,
+td {
+  border: 1px solid #80808082;
+  padding: 5px;
 }
