@@ -1,0 +1,79 @@
+[
+  {
+    "firstName": "Tony",
+    "lastName": "Stark",
+    "dateOfBirth": "02/15/1954",
+    "startDate": "06/23/2002",
+    "department": "Marketing",
+    "street": "5533 Running Springs Ranch Rd",
+    "city": "Ukiah",
+    "state": "CA",
+    "zipCode": "95482"
+  },
+  {
+    "firstName": "Captain",
+    "lastName": "American",
+    "dateOfBirth": "02/15/1995",
+    "startDate": "02/09/2015",
+    "department": "Human Resources",
+    "street": "29 Fox Hound Trl",
+    "city": "Pelham",
+    "state": "AL",
+    "zipCode": "35124"
+  },
+  {
+    "firstName": "Spider",
+    "lastName": "Man",
+    "dateOfBirth": "09/24/1990",
+    "startDate": "02/22/2022",
+    "department": "Engineering",
+    "street": "41 Elliott St #A",
+    "city": "Hartford",
+    "state": "CT",
+    "zipCode": "06114"
+  },
+  {
+    "firstName": "Doctor",
+    "lastName": "Strange",
+    "dateOfBirth": "12/16/1974",
+    "startDate": "02/22/2019",
+    "department": "Legal",
+    "street": "304 Fourbush Ct",
+    "city": "Winfield",
+    "state": "MO",
+    "zipCode": "63389"
+  },
+  {
+    "firstName": "Steve",
+    "lastName": "Rogers",
+    "dateOfBirth": "09/16/1979",
+    "startDate": "04/11/2021",
+    "department": "Human Resources",
+    "street": "112 Wabash St",
+    "city": "Hancock",
+    "state": "MD",
+    "zipCode": "21750"
+  },
+  {
+    "firstName": "Bruce",
+    "lastName": "Banner",
+    "dateOfBirth": "07/18/1950",
+    "startDate": "05/11/2021",
+    "department": "Legal",
+    "street": "809 Hayward Ave",
+    "city": "Takoma Park",
+    "state": "MD",
+    "zipCode": "20912"
+  },
+  {
+    "firstName": "Nick",
+    "lastName": "Fury",
+    "dateOfBirth": "06/09/1974",
+    "startDate": "08/10/2020",
+    "department": "Engineering",
+    "street": "113 Herman St",
+    "city": "East Alton",
+    "state": "IL",
+    "zipCode": "62024"
+  }
+]
