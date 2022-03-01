@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import Table from "../components/Table";
 import data from "../mock-data.json";
 
 function CurrentEmployees() {
@@ -9,7 +10,7 @@ function CurrentEmployees() {
     <div>
       <h1>HRnet</h1>
       <h2>Current Employees</h2>
-      <table>
+      {/* <table>
         <thead>
           <tr>
             <th>First Name</th>
@@ -38,7 +39,8 @@ function CurrentEmployees() {
             </tr>
           ))}
         </tbody>
-      </table>
+      </table> */}
+      <Table/>
       <Link to="/">Home</Link>
     </div>
   );
