@@ -75,5 +75,49 @@
     "city": "East Alton",
     "state": "IL",
     "zipCode": "62024"
+  },
+  {
+    "firstName": "Maria",
+    "lastName":"Hill",
+    "dateOfBirth":"11/08/1947",
+    "startDate": "09/01/2011",
+    "department": "Human Resources",
+    "street": "590 Southville Pike",
+    "city": "Shelbyville",
+    "state": "KY",
+    "zipCode": "40065"
+  },
+  {
+    "firstName": "Jane",
+    "lastName":"Foster",
+    "dateOfBirth":"12/11/1982",
+    "startDate": "09/01/2010",
+    "department": "Legal",
+    "street": "8170 Longview Dr W",
+    "city": "Grand Bay",
+    "state": "AL",
+    "zipCode": "36451"
+  },
+  {
+    "firstName": "Stan",
+    "lastName":"Lee",
+    "dateOfBirth":"12/28/1922",
+    "startDate": "11/05/2010",
+    "department": "Marketing",
+    "street": "591 Galbro Cir",
+    "city": "Webster",
+    "state": "NY",
+    "zipCode": "14580"
+  },
+  {
+    "firstName": "Pepper",
+    "lastName":"Pots",
+    "dateOfBirth":"05/10/1963",
+    "startDate": "01/08/2001",
+    "department": "Human Resources",
+    "street": "4201 Painter Way",
+    "city": "North Islands",
+    "state": "CA",
+    "zipCode": "95660"
   }
 ]
