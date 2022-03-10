@@ -73,12 +73,8 @@ function FilteringTable() {
 
   return (
     <>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-around",
-          marginBottom: "10px",
-        }}
+      <div className="filters"
+    
       >
         <select
           className="nb-entries"
@@ -143,40 +139,45 @@ function FilteringTable() {
         </tbody>
       </table>
       <div className="pagination">
-        <button
-          className="btn-page"
-          onClick={() => gotoPage(0)}
-          disabled={!canPreviousPage}
-        >
-          {"<<"}
-        </button>{" "}
-        <button
-          className="btn-page"
-          onClick={() => previousPage()}
-          disabled={!canPreviousPage}
-        >
-          {"<"}
-        </button>{" "}
-        <button
-          className="btn-page"
-          onClick={() => nextPage()}
-          disabled={!canNextPage}
-        >
-          {">"}
-        </button>{" "}
-        <button
-          className="btn-page"
-          onClick={() => gotoPage(pageCount - 1)}
-          disabled={!canNextPage}
-        >
-          {">>"}
-        </button>{" "}
-        <span>
-          Page{" "}
-          <strong>
-            {pageIndex + 1} of {pageOptions.length}
-          </strong>{" "}
-        </span>
+        <div>
+          Showing 1 to {page.length} of {data.length} entries
+        </div>
+        <div>
+          <button
+            className="btn-page"
+            onClick={() => gotoPage(0)}
+            disabled={!canPreviousPage}
+          >
+            {"<<"}
+          </button>{" "}
+          <button
+            className="btn-page"
+            onClick={() => previousPage()}
+            disabled={!canPreviousPage}
+          >
+            {"<"}
+          </button>{" "}
+          <button
+            className="btn-page"
+            onClick={() => nextPage()}
+            disabled={!canNextPage}
+          >
+            {">"}
+          </button>{" "}
+          <button
+            className="btn-page"
+            onClick={() => gotoPage(pageCount - 1)}
+            disabled={!canNextPage}
+          >
+            {">>"}
+          </button>{" "}
+          <span>
+            Page{" "}
+            <strong>
+              {pageIndex + 1} of {pageOptions.length}
+            </strong>{" "}
+          </span>
+        </div>
       </div>
     </>
   );
