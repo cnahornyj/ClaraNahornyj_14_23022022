@@ -25,6 +25,15 @@ fieldset {
   margin: 25px 0 10px;
 }
 
+form > div:nth-child(1), form > div:nth-child(2), fieldset > div {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+fieldset > div:last-child{
+  margin-bottom: 15px;
+}
+
 a {
   color: #616575;
   text-decoration: none;
@@ -65,7 +74,7 @@ select {
   width: 180px;
 }
 
-select.nb-entries{
+select.nb-entries {
   font-size: 16px;
   color: #324568;
 }
@@ -89,8 +98,14 @@ button:hover {
   cursor: pointer;
 }
 
-button.btn-page{
+button.btn-page {
   width: 50px;
+}
+
+.modal-btn {
+  height: min-content !important;
+  width: min-content !important;
+  border: 1px solid #cccccc26 !important;
 }
 
 table {
@@ -119,7 +134,8 @@ td {
   padding: 5px;
 }
 
-.filters, .pagination{
+.filters,
+.pagination {
   display: flex;
   justify-content: space-around;
   margin-bottom: 10px;
