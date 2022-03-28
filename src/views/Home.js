@@ -1,6 +1,25 @@
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { Modal } from "react-powerfool-modal";
 
 function Home() {
+  const [show, setShow] = useState(false);
+
+  const [firstname, setFirstname] = useState("");
+  const [lastname, setLastname] = useState("");
+  const [birth, setBirth] = useState("");
+  const [startdate, setStartdate] = useState("");
+  const [street, setStreet] = useState("");
+  const [city, setCity] = useState("");
+  const [state, setState] = useState("");
+  const [zipcode, setZipcode] = useState("");
+  const [department, setDepartment] = useState("");
+
+  function saveEmployee(e) {
+    e.preventDefault();
+    setShow(true);
+  }
+
   // Créer un objet à partir du formulaire et le push dans un state global employees ?
   const states = [
     {
@@ -247,58 +266,99 @@ function Home() {
       <Link to="/employees">View Current Employees</Link>
       <h2>Create Employee</h2>
       <form action="">
-        <div style={{ display: "flex", justifyContent: "space-evenly" }}>
+        <div>
           <div>
             <label htmlFor="firstname">Firstname</label>
-            <input type="text" id="firstname" />
+            <input
+              type="text"
+              id="firstname"
+              name="firstname"
+              value={firstname}
+              onChange={(e) => setFirstname(e.target.value)}
+            />
           </div>
           <div>
             <label htmlFor="lastname">Lastname</label>
-            <input type="text" id="lastname" />
+            <input
+              type="text"
+              id="lastname"
+              name="lastname"
+              value={lastname}
+              onChange={(e) => setLastname(e.target.value)}
+            />
           </div>
         </div>
-        <div style={{ display: "flex", justifyContent: "space-evenly" }}>
+        <div>
           <div>
             <label htmlFor="dateofbirth">Date of birth</label>
-            <input type="date" id="dateofbirth" />
+            <input
+              type="date"
+              id="dateofbirth"
+              name="birth"
+              value={birth}
+              onChange={(e) => setBirth(e.target.value)}
+            />
           </div>
           <div>
             <label htmlFor="startdate">Startdate</label>
-            <input type="date" id="startdate" />
+            <input
+              type="date"
+              id="startdate"
+              name="startdate"
+              value={startdate}
+              onChange={(e) => setStartdate(e.target.value)}
+            />
           </div>
         </div>
         <fieldset>
           <legend>Address</legend>
-          <div style={{ display: "flex", justifyContent: "space-evenly" }}>
+          <div>
             <div>
               <label htmlFor="street">Street</label>
-              <input id="street" type="text" />
+              <input
+                id="street"
+                type="text"
+                name="street"
+                value={street}
+                onChange={(e) => setStreet(e.target.value)}
+              />
             </div>
             <div>
               <label htmlFor="city">City</label>
-              <input id="city" type="text" />
+              <input
+                id="city"
+                type="text"
+                name="city"
+                value={city}
+                onChange={(e) => setCity(e.target.value)}
+              />
             </div>
           </div>
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "space-evenly",
-              marginBottom: "15px",
-            }}
-          >
+          <div>
             <div>
               <label htmlFor="state">State</label>
-              <select name="state" id="state">
-                <option>Alabama</option>
-                <option>Kentucky</option>
-                <option>Massachussetts</option>
-                <option>New York</option>
-                <option>California</option>
+              <select
+                id="state"
+                name="state"
+                value={state}
+                onChange={(e) => setState(e.target.value)}
+              >
+                {states.map((state, index) => (
+                  <option value={state.abbreviation} key={index}>
+                    {state.name}
+                  </option>
+                ))}
               </select>
             </div>
             <div>
               <label htmlFor="zip-code">Zip Code</label>
-              <input id="zip-code" type="number" />
+              <input
+                id="zip-code"
+                type="number"
+                name="zip-code"
+                value={zipcode}
+                onChange={(e) => setZipcode(e.target.value)}
+              />
             </div>
           </div>
         </fieldset>
@@ -312,7 +372,12 @@ function Home() {
         >
           <div>
             <label htmlFor="department">Department</label>
-            <select name="department" id="department">
+            <select
+              id="department"
+              name="department"
+              value={department}
+              onChange={(e) => setDepartment(e.target.value)}
+            >
               <option>Sales</option>
               <option>Marketing</option>
               <option>Engineering</option>
@@ -320,9 +385,14 @@ function Home() {
               <option>Legal</option>
             </select>
           </div>
-          <button>Save</button>
         </div>
+        <button onClick={saveEmployee}>Save</button>
       </form>
+      <Modal
+        show={show}
+        onClose={() => setShow(false)}
+        message="Employee Created !"
+      />
     </div>
   );
 }
