@@ -36,7 +36,7 @@ function Home() {
       zipCode: zipcode,
     };
 
-    let checkString = /^[a-zA-Z]+$/;
+    let checkString = /^[a-zA-Z ]+$/;
     // mettre en place la gestion des erreurs lors de l'event onChange sur les input & select ?
 
     if (
