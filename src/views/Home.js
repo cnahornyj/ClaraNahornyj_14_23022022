@@ -1,9 +1,13 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Modal } from "react-powerfool-modal";
+import { createEmployee } from "../store";
 
 function Home() {
   const [show, setShow] = useState(false);
+
+  const [errorMessage, setErrorMessage] = useState("");
+  const [error, setError] = useState(false);
 
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");
@@ -19,6 +23,48 @@ function Home() {
     e.preventDefault();
     setShow(true);
   }
+
+  const onSubmit = (e) => {
+    const employeeInfos = {
+      firstName: firstname,
+      lastName: lastname,
+      startDate: startdate,
+      department: department,
+      dateOfBirth: birth,
+      street: street,
+      city: city,
+      state: state,
+      zipCode: zipcode,
+    };
+
+    let checkString = /^[a-zA-Z]+$/;
+    // mettre par défaut une option à state & department /!\
+    // mettre en place la gestion des erreurs lors de l'event onChange sur les input & select ?
+
+    if (
+      !checkString.test(firstname) ||
+      firstname === "" ||
+      !checkString.test(lastname) ||
+      lastname === "" ||
+      startdate === "" ||
+      department === "" ||
+      birth === "" ||
+      street === ""
+    ) {
+      e.preventDefault();
+      e.stopPropagation();
+      console.log(employeeInfos);
+      setError(true);
+      setErrorMessage("Veuillez saisir des informations correctes/ou manquantes");
+    } else {
+      e.preventDefault();
+      e.stopPropagation();
+      setError(false);
+      setShow(true);
+      console.log(employeeInfos);
+      //createEmployee(employeeInfos);
+    }
+  };
 
   // Créer un objet à partir du formulaire et le push dans un state global employees ?
   const states = [
@@ -265,7 +311,7 @@ function Home() {
       <h1>HRnet</h1>
       <Link to="/employees">View Current Employees</Link>
       <h2>Create Employee</h2>
-      <form action="">
+      <form onSubmit={onSubmit}>
         <div>
           <div>
             <label htmlFor="firstname">Firstname</label>
@@ -298,6 +344,7 @@ function Home() {
               value={birth}
               onChange={(e) => setBirth(e.target.value)}
             />
+            <p style={{color:"#e80404", fontWeight:"bold"}}>Error</p>
           </div>
           <div>
             <label htmlFor="startdate">Startdate</label>
@@ -386,7 +433,8 @@ function Home() {
             </select>
           </div>
         </div>
-        <button onClick={saveEmployee}>Save</button>
+        {error ? <p className="error-message">{errorMessage}</p> : null}
+        <button>Save</button>
       </form>
       <Modal
         show={show}

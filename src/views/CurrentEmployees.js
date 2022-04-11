@@ -4,7 +4,7 @@ import FilteringTable from "../components/FilteringTable";
 import data from "../mock-data.json";
 
 function CurrentEmployees() {
-  const [employees, setEmployees] = useState(data);
+  // const [employees, setEmployees] = useState(data);
 
   return (
     <div>
