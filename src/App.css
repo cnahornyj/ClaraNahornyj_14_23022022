@@ -25,12 +25,14 @@ fieldset {
   margin: 25px 0 10px;
 }
 
-form > div:nth-child(1), form > div:nth-child(2), fieldset > div {
+form > div:nth-child(1),
+form > div:nth-child(2),
+fieldset > div {
   display: flex;
   justify-content: space-evenly;
 }
 
-fieldset > div:last-child{
+fieldset > div:last-child {
   margin-bottom: 15px;
 }
 
@@ -132,6 +134,19 @@ th,
 td {
   border: 1px solid #80808082;
   padding: 5px;
+}
+
+.error-input {
+  border: 2px solid red;
+  background: #ffd4c4;
+}
+
+.error-message {
+  font-weight: 600;
+  font-size: 13px;
+  font-style: italic;
+  margin-top: 6px;
+  letter-spacing: 0.5px;
 }
 
 .filters,

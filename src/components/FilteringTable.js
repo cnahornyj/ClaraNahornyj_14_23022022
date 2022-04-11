@@ -1,15 +1,18 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import {
   useTable,
   useGlobalFilter,
   useSortBy,
   usePagination,
 } from "react-table";
-import mockUpData from "../mock-data.json";
 import { GlobalFilter } from "./GlobalFilter";
 
+
 function FilteringTable() {
-  const data = React.useMemo(() => mockUpData, []);
+
+  const employees = useSelector((state) => state.employees);
+  const data = React.useMemo(() => employees, []);
 
   const columns = React.useMemo(
     () => [

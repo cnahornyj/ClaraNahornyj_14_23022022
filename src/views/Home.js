@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Modal } from "react-powerfool-modal";
+import { useStore } from 'react-redux';
+
 import { createEmployee } from "../store";
 
 function Home() {
@@ -19,10 +21,7 @@ function Home() {
   const [zipcode, setZipcode] = useState("");
   const [department, setDepartment] = useState("");
 
-  function saveEmployee(e) {
-    e.preventDefault();
-    setShow(true);
-  }
+  const store = useStore();
 
   const onSubmit = (e) => {
     const employeeInfos = {
@@ -38,7 +37,6 @@ function Home() {
     };
 
     let checkString = /^[a-zA-Z]+$/;
-    // mettre par défaut une option à state & department /!\
     // mettre en place la gestion des erreurs lors de l'event onChange sur les input & select ?
 
     if (
@@ -67,11 +65,11 @@ function Home() {
       setError(false);
       setShow(true);
       console.log(employeeInfos);
-      //createEmployee(employeeInfos);
+      store.dispatch(createEmployee(employeeInfos));
+      // clearForm();
     }
   };
 
-  // Créer un objet à partir du formulaire et le push dans un state global employees ?
   const states = [
     {
       name: "Alabama",

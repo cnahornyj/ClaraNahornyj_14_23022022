@@ -4,20 +4,7 @@ const reduxDevtools =
 
 // initial state
 const initialState = {
-  employees: [
-    // {
-    //   username: "test",
-    //   id: 1,
-    //   title: "Eat",
-    //   completed: true,
-    // },
-    // {
-    //   username: "test",
-    //   id: 2,
-    //   title: "Code",
-    //   completed: false,
-    // },
-  ],
+  employees: [],
 };
 
 // actions creator
@@ -27,13 +14,12 @@ export const createEmployee = (payload) => ({
 });
 
 // reducer
-
 function employeeReducer(state = initialState, action) {
   switch (action.type) {
     case "CREATE_EMPLOYEE":
       return {
         ...state,
-        employees: [...action.payload],
+        employees: [...state.employees, action.payload],
       };
     default:
       return state;
