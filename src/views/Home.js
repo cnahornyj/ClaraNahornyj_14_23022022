@@ -49,13 +49,18 @@ function Home() {
       startdate === "" ||
       department === "" ||
       birth === "" ||
-      street === ""
+      street === "" ||
+      city === "" ||
+      state === "" ||
+      zipcode === ""
     ) {
       e.preventDefault();
       e.stopPropagation();
       console.log(employeeInfos);
       setError(true);
-      setErrorMessage("Veuillez saisir des informations correctes/ou manquantes");
+      setErrorMessage(
+        "Veuillez saisir des informations correctes/ou manquantes"
+      );
     } else {
       e.preventDefault();
       e.stopPropagation();
@@ -344,7 +349,7 @@ function Home() {
               value={birth}
               onChange={(e) => setBirth(e.target.value)}
             />
-            <p style={{color:"#e80404", fontWeight:"bold"}}>Error</p>
+            <p className="error-message">Saisir une date</p>
           </div>
           <div>
             <label htmlFor="startdate">Startdate</label>
@@ -390,6 +395,7 @@ function Home() {
                 value={state}
                 onChange={(e) => setState(e.target.value)}
               >
+                <option defaultValue={true}></option>
                 {states.map((state, index) => (
                   <option value={state.abbreviation} key={index}>
                     {state.name}
@@ -425,6 +431,7 @@ function Home() {
               value={department}
               onChange={(e) => setDepartment(e.target.value)}
             >
+              <option defaultValue={true}></option>
               <option>Sales</option>
               <option>Marketing</option>
               <option>Engineering</option>
